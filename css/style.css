@@ -1,4 +1,6 @@
-
+@charset "UTF-8";
+@import url(animation.css);
+/* ---------리셋----------- */
 * {
     margin : 0;
     padding : 0;
@@ -14,7 +16,13 @@ a:visited,a:active{color: #000}
 body {
     width: 100%;
 }
-
+.scrollPage {
+    height: 100vh;
+    /* overflow-y: scroll; */
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+/* ---------네비게이션---------- */
 .nav {
     display: flex;
     position: fixed;
@@ -25,12 +33,12 @@ body {
     height: 7vh;
     align-items: center;
     justify-content: space-between;
-    /* background-color: aquamarine; */
     z-index: 10;
 }
 .Logo {
     display: flex;
     align-items: center;
+    color: #000;
 }
 .LogoImg {
     position: relative;
@@ -59,49 +67,94 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
 }
-
 .pageLink {
     display: flex;
     font-size: 1rem;
     font-weight: 300;
     font-style: normal;
 }
-
 .pageLink a {
     margin-left: 2vw;
+    color:#000;
 }
 
+/* ----------메인화면--------- */
 #main {
     position: relative;
     width: 100%;
     height: 100vh;
     padding: 3vh 7vw;
     overflow: hidden;
-    
+    scroll-snap-align: start;
 }
+#main .mainLogoImg {
 
+}
 #main span {
+    display: inline-block;
     position: relative;
-    top: 25vh;
+    top: 23vh;
     line-height: 10rem;
     letter-spacing: -0.3rem;
     font-size: 8rem;
     font-weight: 700;
+    opacity: 1;
 }
-/* #main .square {
-    position:absolute;
-    top: 728px;
-    left: 1530px;
-    width: 435px;
-    height: 435px;
-    transform: rotate(66deg);
-    background: #FFAF2F;
-    border-radius: 50px;
-    opacity: 0.6;
+.mainLogoImg {
+    margin-right: 0px;
+    background:#3E76C5;
+}
+/* .mainLogo {
+    display: inline-block;
+    position: relative;
+    top: 15px;
+    width: 140px;
+    height: 130px;
 } */
+#main .text_0 {
+    animation: textUp 1s forwards;
+    animation-delay: 1s;
+    opacity: 0;
+    background:#3E76C5;
+    transition: 1s;
+}
+#main .text_1 {
+    animation: textUp 1s forwards;
+    animation-delay: 1s;
+    opacity: 0;
+}
+#main .text_2 {
+    margin-right: 2rem;
+    animation: textUp 1s forwards;
+    animation-delay: 1.5s;
+    opacity: 0;
+}
+#main .text_3 {
+    margin-right: 2rem;
+    animation: textUp 1s forwards;
+    animation-delay: 1.5s;
+    opacity: 0;
+}
+#main .text_4 {
+    animation: textUp 1s forwards;
+    animation-delay: 1.5s;
+    opacity: 0;
+}
+#main .text_5 {
+    margin-right: 2rem;
+    animation: textUp 1s forwards;
+    animation-delay: 2s;
+    opacity: 0;
+}
+#main .text_6 {
+    animation: textUp 1s forwards;
+    animation-delay: 2s;
+    opacity: 0;
+}
+
 .backgroundShape .circle {
     position: absolute;
-    top: 750px;
+    top: 790px;
     left: -80px;
 }
 .backgroundShape .square {
@@ -124,23 +177,102 @@ body {
     border-radius: 20px;
     text-align: center;
 }
-
-#barndFilm {
+/*-----------------첫 화면 박스 열리게 함--------------------*/
+.opening {
+    position: absolute;
     width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.opening .openTop {
+    display: flex;
+    position: relative;
+}
+.opening .openBottom {
+    display: flex;
+    position: relative;
+}
+.opening .colorBox {
+    position: relative;
+    width: 20vw;
+    height: 50vh;
+    /* background-color: #F14738; */
+    z-index: 100;
+}
+.opening .openTop .colorBox:nth-child(1) {
+    background-color: #F14738;
+    animation: boxUp 1s forwards;
+}
+.opening .openTop .colorBox:nth-child(2) {
+    background-color: #FFD827;
+    animation: boxUp 1s forwards;
+    animation-delay: 0.2s;
+}
+.opening .openTop .colorBox:nth-child(3) {
+    background-color: #59D64E;
+    animation: boxUp 1s forwards;
+    animation-delay: 0.4s;
+}
+.opening .openTop .colorBox:nth-child(4) {
+    background-color: #55BCF6;
+    animation: boxUp 1s forwards;
+    animation-delay: 0.6s;
+}
+.opening .openTop .colorBox:nth-child(5) {
+    background-color: #7176EC;
+    animation: boxUp 1s forwards;
+    animation-delay: 0.8s;
+}
+.opening .openBottom .colorBox:nth-child(1) {
+    background-color: #F14738;
+    animation: boxDown 1s forwards;
+}
+.opening .openBottom .colorBox:nth-child(2) {
+    background-color: #FFD827;
+    animation: boxDown 1s forwards;
+    animation-delay: 0.2s;
+}
+.opening .openBottom .colorBox:nth-child(3) {
+    background-color: #59D64E;
+    animation: boxDown 1s forwards;
+    animation-delay: 0.4s;
+}
+.opening .openBottom .colorBox:nth-child(4) {
+    background-color: #55BCF6;
+    animation: boxDown 1s forwards;
+    animation-delay: 0.6s;
+}
+.opening .openBottom .colorBox:nth-child(5) {
+    background-color: #7176EC;
+    animation: boxDown 1s forwards;
+    animation-delay: 0.8s;
+}
+
+
+
+
+
+#brandFilm {
+    width: 100%;
+    scroll-snap-align: start;
 }
 .video { /* 동영상 파일 작업 후 변경 예정*/
     width: 100%;
-    height: 100vh;
+    height: 100%;
     /* background-color: #c3c3c3; */
     font-size: 30px;
     text-align: center;
     line-height: 100vh;
+}
+video {
+    width: 90vw;
 }
 .textPage1 {
     position: relative;
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    scroll-snap-align: start;
 }
 .textPage1 p {
     font-size: 8rem;
@@ -193,22 +325,22 @@ body {
 .textPage2 {
     width: 100%;
     height: 100vh;
-    /* background-color: rgb(183, 255, 169); */
+    scroll-snap-align: start;
 }
-.barndLogo span {
+.brandLogo span {
     width: 140px;
     height: 50px;
     border-radius: 50%;
 }
-.barndLogo > span:nth-child(1) {
+.brandLogo > span:nth-child(1) {
     width: 140px;
     height: 50px;
     background-color: #FF1E00;
 }
-.barndLogo > span:nth-child(2) {
+.brandLogo > span:nth-child(2) {
     background-color: #FFCA00;
 }
-.barndLogo > span:nth-child(3) {
+.brandLogo > span:nth-child(3) {
     background-color: #6F78F1;
 }
 .textPage2 p {
@@ -221,41 +353,70 @@ body {
     width: 100%;
     height: 100vh;
     background-color: #c3c3c3;
+    scroll-snap-align: start;
 }
 .persona {
     width: 100%;
     height: 100vh;
     background-color: #9d9d9d;
+    scroll-snap-align: start;
 }
 .SSOLSSOL {
     position: relative;
     width: 100%;
     height: 300vh;
     background: linear-gradient(#fff, #8f8f8f, #000, #000, #000, #000);
+    scroll-snap-align: start;
 }
 .textBox {
     display: flex;
-    position: relative;
-    top: 585px;
-    width: 755px;
-    height: 180px;
-    margin-bottom: 120px;
-    border-radius: 117px;
+    width: 39vw;
+    height: 9.3vw;
+    transition: transform 0.7s, opacity 1s;
     background-color: #fff;
+    border-radius: 117px;
+    margin-bottom: 120px;
     justify-content: center;
     align-items: center;
+}
+.animationContents {
+    position: absolute;
+    padding-top: 30vw;
 }
 .textBox p {
     text-align: center;
     font-size: 2rem;
     font-weight: 500;
+    line-height: 2.5rem;
 }
 .textBox:nth-child(2n-1) {
-    left: 130px;
+    margin-left: 6vw;
 }
 .textBox:nth-child(2n) {
-    left: 1035px;
+    margin-left: 54vw;
 }
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20vh);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* .on-screen {
+    display: flex;
+    width: 39vw;
+    height: 9.3vw;
+    transition: transform 0.7s, opacity 1s;
+    background-color: #fff;
+    border-radius: 117px;
+    margin-bottom: 120px;
+    justify-content: center;
+    align-items: center;
+} */
+
 .line {
     position: absolute;
     width: 50%;
@@ -280,7 +441,7 @@ body {
 }
 .textContents {
     position: relative;
-    top: 95vh;
+    top: 225vh;
     text-align: center;
 }
 .textContents .logo {
@@ -314,6 +475,7 @@ body {
     height: 100vh;
     background-color: #F14738;
     border-radius: 100px 100px 0 0;
+    scroll-snap-align: start;
 }
 .spend {
     width: 92vw;
@@ -371,24 +533,43 @@ body {
 
 }
 #Design {
+    display: flex;
     position: relative;
     width: 100%;
     height: 100vh;
-    /* background-color: #c3c3c3; */
 }
-#Design .designGuide {
-    position: absolute;
-    right: 0;
+#Design .designInfo {
+    width: 80vw;
+    padding: 18.5vh 6vw;
+}
+#Design .designInfo h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 3.7vh;
+}
+#Design .designInfo p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 170%;
 }
 #Design .designGuide .design {
     display: flex;
-    width: 416px;
+    width: 20vw;
     height: 20vh;
+    color: #000;
     background-color: #F7F6F3;
     font-size: 2rem;
     font-weight: 500;
     justify-content: center;
     align-items: center;
+}
+#Design .designGuide .design:hover {
+    color: #fff;
+    background-color: #545454;
+}
+#Design .designGuide .design .choice {
+    color: #fff;
+    background-color: #000;
 }
 
 #footer {
@@ -434,16 +615,7 @@ body {
     position: relative;
     margin-right: 6vw;
 }
-/* .team .people:nth-child(2)::before {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 2px;
-    height: 100%;
-    background: #fff;
 
-} */
 .team .people:nth-last-child(2)::after {
     content: "";
     position: absolute;

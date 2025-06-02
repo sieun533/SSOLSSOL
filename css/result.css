@@ -1,0 +1,32 @@
+#result {
+    display: none;
+    text-align: center;
+}
+#result h5 {
+    margin-top: 10vh;
+}
+.resultBox {
+    position: relative;
+    width: 80%;
+    margin: 40vh auto 5vh;
+    padding: 4rem;
+    text-align: center;
+    background: #fff;
+    border-radius: 20px;
+}
+.resultName{
+    margin: 1vh auto 5vh;
+    font-size: 24pt;
+    font-weight: bold;
+}
+#resultImg {
+    position: absolute;
+    top: -30vh;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    box-shadow: 2px 2px 10px #dfdfdf;
+}
+
+.btnShare {
+    margin: 1vh auto 5vh;
+}
