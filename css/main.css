@@ -1,0 +1,16 @@
+#main {
+    position: relative;
+    width: 80%;
+    margin: 5vh auto;
+    padding: 4rem;
+    text-align: center;
+    border-radius: 20px;
+    background-color: white;
+}
+#main img {
+    width: 80%;
+    margin: auto;
+}
+#main button {
+    margin-top: 2vh;
+}
